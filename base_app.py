@@ -103,7 +103,7 @@ def main():
 	#st.sidebar.info("General Information")
 	with st.sidebar:
 		selection = option_menu("Main Menu", ["Home", "About Us", "Prediction", "Information", "Contact Us"], 
-        icons=['house', 'people-group','chart-line','info','address-book'], menu_icon="cast", default_index=0)
+        icons=['house', 'people','graph-up-arrow','info-circle','envelope'], menu_icon="cast", default_index=0)
 																				# default_index = 0 (Home page)
 
 	# Building out the "About Us" page
@@ -211,7 +211,7 @@ def main():
 		with col4:
 			#st.subheader("Palesa")
 			st.markdown('Palesa')
-			st.image("resources/imgs/Palesa2.jpg")
+			st.image("resources/imgs/Palesa3.jpg")
 
 		with col5:
 			#st.subheader("Kgotlelelo")
@@ -277,6 +277,22 @@ def main():
 		st.markdown("")
 		st.markdown("")
 
+		#st.info("Our Pricing")
+		st.markdown('<div style="text-align: center; color:Black; font-size: 30px;">Our Pricing</div>', unsafe_allow_html=True)
+		st.markdown("")
+		st.markdown("")
+
+		st.info("Standard - *Free*")
+		st.info("Pro - *$3 p.a*")
+		st.markdown("Sentiments get emailed to you")
+		st.info("Premium - *$7 p.a*")
+		st.markdown("Sentiments get emailed to you and your whole team")
+		st.markdown("Accompanying sentiment visuals")
+
+		st.markdown("")
+		st.markdown("")
+		st.markdown("")
+
 		st.subheader("Raw Twitter data")
 		if st.checkbox('View the raw data represented by the bar chart above'): # data is hidden if box is unchecked
 			st.write(raw[['sentiment', 'message']]) # will write the df to the page
@@ -284,9 +300,9 @@ def main():
 
     #A form for the Contact Us page
 	if selection == "Contact Us":
-		st.subheader("Contact")
+		st.subheader("Contact Us")
 		with st.form(key='form1'):
-			firstname = st.text_input("Username")
+			firstname = st.text_input("Firstname")
 			lastname = st.text_input("Lastname")
 			email = st.text_input("Email")
 			message = st.text_area("Insert text here")
